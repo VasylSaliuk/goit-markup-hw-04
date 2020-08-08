@@ -1,7 +1,13 @@
 /*Секция герой*/
 
-.hero {
-    display: block;
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 200px;
+    padding-bottom: 280px;
     background-image: linear-gradient(
         to right,
         rgba(47, 48, 58, 0.8),
@@ -12,8 +18,6 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    padding: 200px 252px;
-    margin: 0;
     text-align: center;
     background-color: rgba(47, 48, 58, 0.8);
 }
@@ -49,7 +53,7 @@
 }
 
 .holder {
-    width: 270px;
+    width: calc((100% - 30px*3)/4);
 }
 
 .holder::before {
@@ -64,19 +68,19 @@
 }
 
 .icon-antenna::before {
-    background-image: url(../img/antenna.svg);
+    background-image: url(../img/icon/antenna.svg);
 }
 
 .icon-clock::before {
-    background-image: url(../img/clock.svg);
+    background-image: url(../img/icon/clock.svg);
 }
 
 .icon-diagram::before {
-    background-image: url(../img/diagram.svg);
+    background-image: url(../img/icon/diagram.svg);
 }
 
 .icon-astronaut::before {
-    background-image: url(../img/astronaut.svg);
+    background-image: url(../img/icon/astronaut.svg);
 }
 
 /*.holder-img {
@@ -96,12 +100,11 @@
     text-transform: uppercase;
 }
 
-.holder-item {
-    width: 270px;
+.holder-item {  
     height: 75px;
     font-size: 14px;
     line-height: 1.71;
-   }
+}
 
 /*Секция Чем мы занимаемся*/
 
@@ -121,10 +124,8 @@
 
 .occupation-type {
     display: flex;
-    padding: 27px 82px;
+    padding: 27px 80px;
     align-items: center;
-    display: inline-block;
-    width: 370px;
     height: 70px;
     font-weight: bold;
     font-size: 14px;
@@ -150,13 +151,13 @@
 }
 
 .card-team {
-    width: 270px;
+    width: calc((100% - 30px*3)/4);
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
     border-radius: 0px 0px 4px 4px;
     background-color: #ffffff;
 }
 
-.card-team .social-links {
+.card-team .social-list {
     justify-content: center;
 }
 
@@ -166,8 +167,7 @@
 }
 
 .name-team {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 16px;
@@ -175,9 +175,30 @@
 }
 
 .position-team {
-    display: flex;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #AFB1B8;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.icon {
+    fill: currentColor;
 }
 
 /*Секция Постоянные клиенты*/
@@ -186,18 +207,29 @@
     display: flex;
 }
 
-.icon-client {
+.clients-link {
     display: flex;
-    padding: 19pt 41px;
+    align-items: center;
     justify-content: center;
     width: 170px;
     height: 90px;
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;
+    color: #AFB1B8;
 }
 
-.icon-client:not(:nth-child(6n)) {
+.clients-link:hover,
+.clients-link:focus {
+    border: 1px solid var(--accent-color);
+}
+
+.clients-link:hover .icon,
+.clients-link:focus .icon {
+    fill: var(--accent-color);
+}
+
+.item-clients:not(:nth-child(6n)) {
     margin-right: 30px;
 }
 
