@@ -183,13 +183,13 @@ background-color: turquoise;
     margin: 0;
     color: var(--primary-white-color);
     background-color: var(--accent-color);
+    cursor: pointer;
 }
 
  /*Стилизация футера*/
 
 footer {
     background-color: #2F303A;
-    height: 252px;
 }
 
 .container.footer {
